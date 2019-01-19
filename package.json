@@ -1,0 +1,42 @@
+{
+	"name": "themed-folders",
+	"displayName": "Themed Folders",
+	"description": "Apply different themes to different folders.",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Themed Folders Configuration",
+			"properties": {
+				"themedFolders.paths": {
+					"type": "object",
+					"description": "Keys are folder paths. Values are themes.",
+					"properties": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"eslint": "^4.11.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	}
+}
